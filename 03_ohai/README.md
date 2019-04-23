@@ -10,7 +10,7 @@ _In this module you will run the ohai tool directly, view it's output, and learn
 * Log in to the Centos 7 machine using your ssh client.
   * Ask the instructor for connection details if needed.
 
-1. Double-click the "ChefDK" icon on the desktop and run `ohai`
+1. From the home directory, run `ohai`
    * The ChefDK is a collection of Ruby Gems (libraries) that collectively allow you to generate Chef policy and interact with a Chef Server. Once of these tools is called [Ohai](https://docs.chef.io/ohai.html)
    * This was the first Chef tool written! It collects host details when run, and presents them in a JSON format.
 
