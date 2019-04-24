@@ -5,7 +5,7 @@ Here we discuss Ohai, the system profiling tool used by the chef-client, and how
 
 ## Ohai, welcome!
 
-_In this module you will run the ohai tool directly, view it's output, and learn about executing various plugins._
+_In this module you will run the Ohai tool directly, view its output, and learn about executing various plugins._
 
 * Log in to the CentOS 7 machine using your SSH client.
   * Ask the instructor for connection details if needed.
@@ -15,7 +15,7 @@ _In this module you will run the ohai tool directly, view it's output, and learn
    * This was the first Chef tool written! It collects host details when run and presents them in a JSON format.
 
 2. Ohai is composed of plugins
-   * Each top-level key in the output is an ohai "plugin"
+   * Each top-level key in the output is an Ohai "plugin"
    * Plugins can be selectively executed to see just that output.
    * Try it out:
      * `ohai platform`
@@ -37,19 +37,19 @@ _In this module you will run the ohai tool directly, view it's output, and learn
 4. The chef-client uses Ohai to build the Node Object
    * Although Ohai is included with the ChefDK, you don't need to run it manually. The chef-client does this for you at the beginning of each run. 
    * The chef-client uses this information to build the base of the [Node Object](https://docs.chef.io/nodes.html#node-objects).
-   * This object is globally-accessible to the run, meaning that it can be accessed by your recipes and resources. The key-value pairs we saw before are called **Node Attributes**, and are one of the most important concepts to master. 
+   * This object is globally-accessible to the run, meaning that it can be accessed by your recipes and resources. The key-value pairs we saw before are called **Node Attributes** and are one of the most important concepts to master. 
 
 ## Utilizing the Node Object
 
 5. Node Attributes as tunables
    * An **attribute** is simply a piece of information about your node. This information can be accessed by a recipe or resource during the course of the chef-client run. At the end of the run, the information is persisted to a Chef Server or when in local-mode to the ~/nodes/ directory. 
-     * Check it out now - you should see a file in c:\users\administrator\nodes named after the internal hostname (you will need to use sudo privilages to do so). This contains the node object from the previous run! 
+     * Check it out now - you should see a file in c:\users\administrator\nodes named after the internal hostname (you will need to use sudo privileges to do so). This contains the node object from the previous run! 
    * The [About Attributes](https://docs.chef.io/attributes.html) documentation states that attributes are used to determine:
      * The current state of the node
      * What the state of the node was at the end of the previous chef-client run
      * What the state of the node should be at the end of the current chef-client run
 
-5. Hello, attribute
+6. Hello, attribute
    * To see attributes in action, let's add one to our apache webserver.
    * Open the server recipe, and examine the file resource:
    ```
@@ -78,7 +78,7 @@ _In this module you will run the ohai tool directly, view it's output, and learn
      "
    end
    ```
-   * Our code will now compile but it's still considered a string, which is static content. The ouput would literally print node['ATTRIBUTE'] , not the attribute's value itself.
+   * Our code will now compile but it's still considered a string, which is static content. The output would literally print node['ATTRIBUTE'] , not the attribute's value itself.
    * We use **string interpolation** to solve this issue. This method allows us to insert a variable, or object defined outside of a string into the static content. The syntax rules are:
      * Use "double-quotes" around any string you're inserting an attribute or Ruby variable into
      * surround the attribute with #{}
@@ -92,7 +92,7 @@ _In this module you will run the ohai tool directly, view it's output, and learn
    end
    ```
 
-6. Print some other attributes
+7. Print some other attributes
    * Use string interpolation to add the following attributes to your Hello, world page:
      * platform
      * ipaddress
@@ -101,7 +101,7 @@ _In this module you will run the ohai tool directly, view it's output, and learn
 
 ## Extending the Node Object
 
-7. User-defined attributes
+8. User-defined attributes
    * Node Attributes can also be created from other policy, such as:
      * Cookbooks (in attribute files and/or recipes)
      * Roles
