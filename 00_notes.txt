@@ -11,3 +11,7 @@
 
 03_ohai
 1) There is no step for students to apply and verify results of updating the server recipe.
+
+04_templates
+1) At this point I think there should be less hand-holding with the generate command.  Simply telling students to use the --help option to find out how to generate a template would suffice.
+2) Again it would be good if the AMI had tree preinstalled so that students could see for themselves the file tree to see the template.

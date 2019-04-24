@@ -7,7 +7,7 @@ Here we discuss generating template files and utilizing ERB syntax, aka embedded
 
 _This exercise will be guided by your instructor. Check out the [About Templates](https://docs.chef.io/templates.html) docs as you follow along._
 
-* Log in to the Centos 7 machine using your ssh client.
+* Log in to the CentOS 7 machine using your SSH client.
   * Ask the instructor for connection details if needed.
 
 ## Generating a template
@@ -49,9 +49,9 @@ _This exercise will be guided by your instructor. Check out the [About Templates
 
 3. Notice the directory called templates/ and the index.html.erb file it contains.
    * Embedded Ruby (ERB) is a templating language commonly utilized by Ruby developers. It allows us to pass variables (often Node Attributes) into a templating file that should be rendered by the chef-client when it runs.
-   * The [template resource](https://docs.chef.io/resource_template.html) has a source property that points to the erb file and renders any of the Ruby code found inside. [Variables](https://docs.chef.io/templates.html#variables) can also be passed directly from the template resource definition within a recipe.
+   * The [template resource](https://docs.chef.io/resource_template.html) has a source property that points to the ERB file and renders any of the Ruby code found inside. [Variables](https://docs.chef.io/templates.html#variables) can also be passed directly from the template resource definition within a recipe.
 
-4. ERB sytax is very simple.
+4. ERB syntax is very simple.
    * There are two basic types of tags:
      * `<% %>`
      * `<%= %>`
@@ -62,12 +62,12 @@ _This exercise will be guided by your instructor. Check out the [About Templates
 
 5. To use a template instead of the file resource, two changes need to occur:
    1) Generate an ERB file and define the template code
-   2) Use the template resource instead of file
+   2) Use the template resource instead of the file resource
 
 ## Using ERB
 
 6. Defining the ERB
-   * From the apache cookbook's server recipe, copy the content of the index.html file we previously defined. Paste this content into index.html.erb
+   * From the apache cookbook's server recipe, copy the content of the index.html file we previously defined. Paste this content into the newly generated index.html.erb file
    * Next, replace any string interpolated values with the ERB syntax. For example, transform
      * `#{ node['ipaddress'] }`
      into
@@ -76,8 +76,8 @@ _This exercise will be guided by your instructor. Check out the [About Templates
 
 7. Call the template from the recipe
    * Next, we want to use a template resource instead of the file resource:
-   a) Opening the server recipe, change file to template
-   b) Erase the `content` property, and replace it with a `source` that resolves to the name of the file in the templates directory, 'index.html.erb'
+     * Opening the server recipe, change "file" to "template"
+     * Erase the `content` property, and replace it with a `source` that resolves to the name of the file in the templates directory, 'index.html.erb'
    ```
    template '/var/www/html/index.html' do
      source 'index.html.erb'
