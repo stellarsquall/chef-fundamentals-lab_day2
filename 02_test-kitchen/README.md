@@ -5,7 +5,7 @@ This lab exercise will be guided by your instructor.
 
 ## Getting setup
 
-_This lab should be completed within the Centos 7 training environment provided by your instructor._
+_This lab should be completed within the CentOS 7 training environment provided by your instructor._
 
 * The required template file for test kitchen is included in this repo and should also be present within the home directory of your training environment at:
   * /home/chef/kitchen-template.yml

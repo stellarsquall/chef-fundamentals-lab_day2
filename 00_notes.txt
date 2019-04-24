@@ -3,3 +3,7 @@
 
 01_apache
 1) We should probably have tree installed on these AMIs.
+
+02_test-kitchen
+1) I assume there aren't lab procedures yet because you had to switch it to CentOS?
+2) What size of instance are you using for the AWS CentOS machine considering that the .kitchen.yml file has both Ubuntu and CentOS platforms?
