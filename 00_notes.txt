@@ -1,2 +1,5 @@
 00_setup
 1) The README for the repo states that we will be using both the Windows 2016 and CentOS 7 environments but the labs only use the CentOS machine.
+
+01_apache
+1) We should probably have tree installed on these AMIs.

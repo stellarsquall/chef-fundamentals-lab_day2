@@ -5,9 +5,9 @@ In this lab exercise you'll test everything you've learned so far about Chef!
 
 ## Getting setup
 
-_This lab should be completed within the Centos 7 training environment provided by your instructor._
+_This lab should be completed within the CentOS 7 training environment provided by your instructor._
 
-* Log in to the centos machine using an ssh client. In most cases your terminal or powershell should have ssh available.
+* Log in to the CentOS machine using an SSH client. In most cases your terminal or PowerShell should have SSH available.
   * Ask the instructor for connection details if needed.
   * You'll need to select a text editor to modify files with. 
    * These editors are preinstalled, or you can install your own:
@@ -29,7 +29,7 @@ _Try to complete the lab by following the steps. If you get stuck, ask your neig
 
 3. Generate a recipe called "server" in the apache cookbook
 
-4. Populate the server recipe with three resources
+4. Populate the server recipe with three resources:
    * the `package` resource should install the apache package, named "httpd" on rhel systems
    * the `file` resource should create "/var/www/html/index.html" with the content `<h1>Hello, world!</h1>`
    * the `service` resource should enable and start the "httpd" service
@@ -40,7 +40,8 @@ _Try to complete the lab by following the steps. If you get stuck, ask your neig
    * Don't forget about:
      * `--local-mode` or `-z`
      * `--runlist` or `-r`
+     * We're on a *nix system, we need to have `sudo` privilages!
 
-7. Verify that the chef-client completes as expected, and your webpage is being served on the localhost
+7. Verify that the chef-client completes as expected and your webpage is being served on the localhost
    * Execute `curl localhost`
    * What are some other ways could you check your work?
