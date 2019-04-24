@@ -1,5 +1,6 @@
 00_setup
 1) The README for the repo states that we will be using both the Windows 2016 and CentOS 7 environments but the labs only use the CentOS machine.
+2) Again I assume we'll be installing Chef Workstation on these over the ChefDK.
 
 01_apache
 1) We should probably have tree installed on these AMIs.
@@ -7,3 +8,6 @@
 02_test-kitchen
 1) I assume there aren't lab procedures yet because you had to switch it to CentOS?
 2) What size of instance are you using for the AWS CentOS machine considering that the .kitchen.yml file has both Ubuntu and CentOS platforms?
+
+03_ohai
+1) There is no step for students to apply and verify results of updating the server recipe.
