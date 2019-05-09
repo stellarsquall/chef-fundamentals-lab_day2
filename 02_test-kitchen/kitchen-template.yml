@@ -23,6 +23,7 @@ platforms:
       privileged: true
       provision_command:
         - systemctl enable sshd.service
+        - yum install net-tools -y
 
 suites:
   - name: default
